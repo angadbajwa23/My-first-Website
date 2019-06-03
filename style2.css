@@ -1,0 +1,122 @@
+body{
+	background-color: navy;
+	
+	color:#fff;
+	font-family:Times New Roman, Times, san-serif;
+	font-size:16px
+	margin:0;
+	background-size: contain, cover;
+}
+#main-header
+{
+	margin: 0;
+	padding-top: 50;
+	padding-bottom: 50;
+	background-color: coral;
+	color:#fff;
+	height: 80px;
+	text-align: center;
+	font-family: Times New Roman, Times, san-serif;
+	font-weight:bold;
+	text-decoration: underline;
+	letter-spacing: 0.2em;
+	word-spacing: 1em;
+	}
+	#navbar{
+		margin-top:-20px;
+		margin-left: 0px;
+	height: =20px;
+	padding-top: 10px;
+	
+	background-color: #333;
+	color:#fff;
+}
+
+#navbar ul{
+	padding:0;
+	list-style:none; 
+}
+#navbar li{
+	
+	display: inline;
+}
+#navbar a{
+	color:#fff;
+	text-decoration: none;
+	font-size: 14px;
+	padding :30px; 
+}
+#sidebar{ text-align: center;
+	margin-right: 100px;
+	margin-top: 20px;
+	float:right;
+	width:30%;
+	background-color: navy;
+	color: #fff;
+	padding-right:30px;
+	padding-left:30px;
+	box-sizing:border-box;
+	font-weight: normal;
+	font-size: 30px;
+	font-family: Arial, Helvetica, san-serif;
+	border:5px red dashed;
+}
+#middle
+{
+	margin-left: 30px;
+}
+#image
+{
+	margin-left: 30px;
+}
+#footer
+{
+	float:right;
+	font-style:italic;
+	font-size: 16px;
+	margin-left:1100px;
+	margin-top:300px;
+	position: all;
+}
+
+#login{
+
+	
+	margin-left:550px;
+	margin-top:200px;
+	font-size: 25px;
+	
+    
+
+}
+#button
+{
+	margin-left: 25px;
+	margin-top: 10px; 
+	background-color: white;
+	font-size: 20px;
+}
+#sidebar2{
+	margin-top: 20px;
+	margin-right: 100px;
+	float:right;
+	width:30%;
+	background-color: #333;
+	color: #fff;
+	padding:10px;
+	box-sizing:border-box;
+}
+.myform{
+	padding-bottom: 10px;
+}
+.myform label{
+	margin: 0;
+	display: block;
+	padding-top: 10px;
+	font-style: italic;
+}
+.myform input[type="text"]
+{
+	padding-bottom: 20px;
+	width=20%;
+}

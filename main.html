@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style2.css">
+	<header id="main-header"><h1>WEIGH TO HEALTHY LIFE</h1></header>
+</head>
+<body>
+	
+		<nav id="navbar">
+		<div>
+			<ul>
+				
+				<li><a href="about%20me.html">About ME and Contact</a></li>
+				
+				<li><a href="homepage.html">Log Out </a></li>
+
+			</ul>
+		</div>
+		</nav>
+		<section>
+			<p>Hello!!!</p>
+			<p>Weight management is the phrase used to describe both the techniques and underlying physiological processes that contribute to a person's ability to attain and maintain a certain weight. Most weight management techniques encompass long-term lifestyle strategies that promote healthy eating and daily physical activity. Moreover, weight management involves developing meaningful ways to track weight over time and to identify ideal body weights for different individuals.Before we give you your ideal diet plan we would like to get to know you better</p>
+			<form class="myform">
+				<div>
+					 <label>Age</label>
+					 <input type="number" name="age">
+					 <label>Height</label>
+					 <input type="number" name="height" placeholder="In centimertres ">
+					<label>Weight</label>
+					<input type="number" name="weight" placeholder="In kg">
+					<label>Gender</label>
+					<select id=gender>
+						<option value="male">Male</option>
+						<option value="female">Female</option>
+					</select>
+  					<label>Type of Activity ypu indulge in</label>
+  					 <select  id="activity">
+					<option value="1" >Basal Metabolic Rate (BMR)</option>
+					<option value="1.2" >Sedentary: little or no exercise</option>
+					<option value="1.375" >Light: exercise 1-3 times/week</option>
+					<option value="1.465" selected>Moderate: exercise 4-5 times/week</option>
+					<option value="1.55" >Active: daily exercise or intense exercise 3-4 times/week</option>
+					<option value="1.725" >Very Active: intense exercise 6-7 times/week</option>
+					<option value="1.9" >Extra Active: very intense exercise daily, or physical job</option>
+				</select>	
+				</div>
+
+				
+			</form>
+			<input type="button" value="Submit" onclick="calcWeight()">
+			<br>
+			<p>Ideal Weight: <input type="text" name="ans"></p>
+			<br>
+   
+			<script>
+    function calcWeight() {
+        let num1 = document.getElementsByName("height")[0].value;
+        
+        let ans = (Number(num1)-100)-((Number(num1)-100)*0.1);
+        document.getElementsByName("ans")[0].value = ans;
+    }
+</script>
+
+
+		</section>
+		<aside id="sidebar2">
+			<p> The formula which we use here is one which is Universally accepted.</p>
+			<p> Mifflin-St Jeor Equation:
+			For men:
+			BMR = 10W + 6.25H - 5A + 5
+			For women:
+			BMR = 10W + 6.25H - 5A - 161
+			W is body weight in kg
+			H is body height in cm
+			A is age</p>
+		</aside>
+
+
+<br>
+<br>
+
+<p>We begin with knowing what you had for food today. So we need your help filling in the info for the food you had today. If you are ready to begin then show your enthusiasm and click the Let's Go button</p>
+<input type="button" onclick="createTable()" value="Let's GO"> 
+<hr>
+<table id="myTable" border="1">
+<thead>
+	<tr>
+		<th>Food Item</th>
+		<th>Calories</th>
+		
+	</tr>
+</thead> 
+<tbody>
+</tbody>
+</table>
+<script type="text/javascript">
+	function createTable()
+{
+rn = window.prompt("Input number of food items you had today", 1);
+
+  
+ for(var r=1;r<=rn;r++)
+  {
+   var x=document.getElementById('myTable').insertRow(r);
+   for(var c=0;c<2;c++)  
+    {
+     var y=  x.insertCell(c);
+     y.innerHTML="R-"+r+" C-"+c; 
+    }
+   }
+
+}
+</script>
+
+
+<form> 
+<input type="button" onclick="changeContent()" value="Change content of Table"> 
+
+</form> 
+<script type="text/javascript">
+	function changeContent()
+{
+rn = window.prompt("Input the Row number(0,1,2)", "0");
+cn = window.prompt("Input the Column number(0,1)","0");
+content = window.prompt("Input the Cell content");  
+var x=document.getElementById('myTable').rows[rn].cells;
+x[cn].innerHTML=content;
+
+}
+</script>
+ <span id="val"></span>
+<p>After filling the table click on Done</p>
+<input type="button" onclick="sum()" value="Done">
+<script>
+            function sum()
+            {
+            var table = document.getElementById("myTable"), sumVal = 0;
+            
+            for(var i = 1; i <=rn; i++)
+            {
+                sumVal = sumVal + parseInt(table.rows[i].cells[1].innerHTML);
+            }
+            
+           
+            document.getElementById("val").innerHTML = "Total Calories Intake today = " + sumVal;
+            console.log(sumVal);
+            Cal();
+            }
+</script>
+<br>
+
+<p>Our Analysis</p>
+<span id="val2"></span>
+<script >
+	function Cal()
+	{
+	
+	
+	let h = document.getElementsByName("height")[0].value;
+	let w = document.getElementsByName("weight")[0].value;
+	let a = document.getElementsByName("age")[0].value;
+	var g=document.getElementById("gender");
+	var strSel = "The Value is: " + g.options[g.selectedIndex].value + " and text is: " + g.options[g.selectedIndex].text;
+	var i=document.getElementById("activity");
+    
+	if(g.options[g.selectedIndex].text==="Male")
+	{
+		
+	  var bmr=10*Number(w)+6.25*Number(h)-5*Number(a)+5;
+
+	}
+	else
+	{
+		var bmr=10*Number(w)+6.25*Number(h)-5*Number(a)-161;
+	}	
+	if(i.options[i.selectedIndex].value==="1")
+	{
+		var IdCal=bmr;
+	}
+	if(i.options[i.selectedIndex].value==="1.2")
+	{
+		var IdCal=1.2*Number(bmr);
+	}
+	if(i.options[i.selectedIndex].value==="1.375")
+	{
+		var IdCal=1.375*Number(bmr);
+	}
+	if(i.options[i.selectedIndex].value==="1.465")
+	{
+		var IdCal=1.465*Number(bmr);
+	}
+	if(i.options[i.selectedIndex].value==="1.55")
+	{
+		var IdCal=1.55*Number(bmr);
+	}
+	if(i.options[i.selectedIndex].value==="1.725")
+	{
+		var IdCal=1.725*Number(bmr);
+	}
+	if(i.options[i.selectedIndex].value==="1.9")
+	{
+		var IdCal=1.9*Number(bmr);
+	}
+	
+
+	
+	
+	document.getElementById("val2").innerHTML = "Ideal NUmber OF Calorie Intake = " + IdCal "on't worry, from the tomorrow onwards make sure you follow this calorie intake for your ideal weigth!";
+}
+</script>
+
+<script>
+	var d;
+	if(IdCal>sumVal)
+	{
+		d=IdCal-sumVal;
+		document.write("Your calories intake should increase by "+d "   on a daily basis to achieve your ideal weight");
+	}
+	else if(IdCal<sumVal)
+	{
+		d=sumVal-IdCal;
+		document.write=("Your calories intake should decrease by "+d "   on a daily basis to achieve your ideal weight ");
+	}
+	else
+	{
+		document.write("Great Job!!! You had an ideal calorie intake today.");
+	}
+
+
+
+	
+
+</script>
+
+
+</body>
+</html>
